@@ -1,0 +1,5 @@
+{
+  "mongoURI": "mongodb+srv://marcelo:gnTr88o0DUMGs7EP@cluster0.dp00q.mongodb.net/user?retryWrites=true&w=majority",
+  "jwtSecret": "8GONieWjFi_MIHCKzzvuo3zBet4AU8ElgT3rQ0DLi8FuP6sxH-Q2MPx73YO9zywXI2o3H4XCkZQAYrr8M-stDOTEh9iN-WCcj032_Sf_etYVVIUVS9esvAF2342eeK0G5sHQKk8NTiuUVs6q_sDCNTzlepV0e8AD8msZ3FfiGX8",
+  "githubToken": "<yoursecrectaccesstoken>"
+}
