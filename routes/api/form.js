@@ -22,10 +22,10 @@ router.get("/", auth, async (req, res, next) => {
 // @route  GET /user/:email
 // @desc   DETAIL user
 // @access Public
-router.get("/:email", [], async (req, res, next) => {
+router.get("/:id", [], async (req, res, next) => {
   try {
-    let param_email = req.params["email"];
-    const user = await User.findOne({ email: param_email });
+    let param_id = req.params["id"];
+    const user = await User.findOne({ _id: param_id });
     if (user) {
       res.json(user);
     } else {
@@ -81,11 +81,11 @@ router.post(
 // @desc   PARTIAL EDIT user
 // @access Public
 router.patch(
-  "/:email",
+  "/:id",
   [check("email", "email is not valid").isEmail()],
   async (req, res, next) => {
     try {
-      let param_email = req.params["email"];
+      let param_id = req.params["id"];
       let { name, email, password, is_active, is_admin } = req.body;
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -97,7 +97,7 @@ router.patch(
         update.password = await bcrypt.hash(password, salt);
       }
       const user = await User.findOneAndUpdate(
-        { email: param_email },
+        { _id: param_id },
         { $set: update },
         { new: true }
       );
