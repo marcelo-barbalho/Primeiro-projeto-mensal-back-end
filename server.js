@@ -19,7 +19,7 @@ app.use("/user", require("./routes/api/form"));
 app.use("/profile", require("./routes/api/profile"));
 app.use("/auth", require("./routes/api/auth"));
 
-app.get("/", (req, res) => res.send("e ai?"));
+app.get("/", (req, res) => res.send("e ai? testando muito"));
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname));
